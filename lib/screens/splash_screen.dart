@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'dart:async'; // For adding delay
+import 'dart:async';
+
+import 'package:my_project/screens/onboarding_screen.dart'; // For adding delay
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,13 +16,13 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     // // Navigate to home screen after 3 seconds
-    // Timer(const Duration(seconds: 10), () {
-    //   Navigator.of(context).push(
-    //     MaterialPageRoute(
-    //       builder: (context) => Container(),
-    //     ),
-    //   );
-    // });
+    Timer(const Duration(seconds: 3), () {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) => const OnBoardingScreen(),
+        ),
+      );
+    });
   }
 
   @override
