@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:async';  // For adding delay
+import 'dart:async'; // For adding delay
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -10,7 +10,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    
+
     // Navigate to home screen after 3 seconds
     Timer(Duration(seconds: 10), () {
       Navigator.of(context).pushReplacementNamed('/home');
@@ -35,8 +35,16 @@ class _SplashScreenState extends State<SplashScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  // Add your logo image here
+                  Image.asset(
+                    'assets/images/logo.png', // Ensure the path is correct
+                    width: 250, // Set the width of the logo
+                    height: 250, // Set the height of the logo
+                  ),
+                  SizedBox(
+                      height: 20), // Add some spacing between logo and text
                   Text(
-                    'Pamerger',
+                    'Pamurger',
                     style: TextStyle(
                       fontFamily: 'Arial',
                       fontSize: 35.0,
@@ -44,7 +52,9 @@ class _SplashScreenState extends State<SplashScreen> {
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(height: 100,)
+                  SizedBox(
+                    height: 100,
+                  )
                 ],
               ),
             ),
