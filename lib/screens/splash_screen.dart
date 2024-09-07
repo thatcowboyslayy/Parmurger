@@ -38,12 +38,19 @@ class _SplashScreenState extends State<SplashScreen> {
                 end: Alignment.bottomRight,
               ),
             ),
-            child: const Center(
+            child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
+                  Image.asset(
+                    'assets/images/logo.png', // Ensure the path is correct
+                    width: 250, // Set the width of the logo
+                    height: 250, // Set the height of the logo
+                  ),
+                  const SizedBox(
+                      height: 20), // Add some spacing between logo and text
+                  const Text(
                     'Parmurger',
                     style: TextStyle(
                       fontFamily: 'Arial',
@@ -52,7 +59,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 100,
                   )
                 ],
