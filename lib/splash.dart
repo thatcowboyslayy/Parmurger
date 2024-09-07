@@ -12,7 +12,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     
     // Navigate to home screen after 3 seconds
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 10), () {
       Navigator.of(context).pushReplacementNamed('/home');
     });
   }
@@ -20,16 +20,47 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,  // Change this to your splash background color
-      body: Center(
-        child: Text(
-          'Pamerger',  // Splash Screen Text
-          style: TextStyle(
-            fontSize: 40.0,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
+      body: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Color(0xFF014e28), Color(0xFF87dc1b)],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    'Pamerger',
+                    style: TextStyle(
+                      fontFamily: 'Arial',
+                      fontSize: 35.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(height: 100,)
+                ],
+              ),
+            ),
           ),
-        ),
+          // Three-dot loading indicator at the bottom
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.all(48.0),
+              child: CircularProgressIndicator(
+                color: Colors.white, // Color of the loading indicator
+                strokeWidth: 3.0,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
