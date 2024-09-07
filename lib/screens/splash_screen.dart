@@ -44,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'Pamerger',
+                    'Parmurger',
                     style: TextStyle(
                       fontFamily: 'Arial',
                       fontSize: 35.0,
