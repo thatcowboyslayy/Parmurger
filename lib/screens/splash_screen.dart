@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'dart:async';  // For adding delay
+import 'dart:async'; // For adding delay
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -10,11 +12,15 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    
-    // Navigate to home screen after 3 seconds
-    Timer(Duration(seconds: 10), () {
-      Navigator.of(context).pushReplacementNamed('/home');
-    });
+
+    // // Navigate to home screen after 3 seconds
+    // Timer(const Duration(seconds: 10), () {
+    //   Navigator.of(context).push(
+    //     MaterialPageRoute(
+    //       builder: (context) => Container(),
+    //     ),
+    //   );
+    // });
   }
 
   @override
@@ -23,14 +29,14 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [Color(0xFF014e28), Color(0xFF87dc1b)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
             ),
-            child: Center(
+            child: const Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -44,16 +50,18 @@ class _SplashScreenState extends State<SplashScreen> {
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(height: 100,)
+                  SizedBox(
+                    height: 100,
+                  )
                 ],
               ),
             ),
           ),
           // Three-dot loading indicator at the bottom
-          Align(
+          const Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: const EdgeInsets.all(48.0),
+              padding: EdgeInsets.all(48.0),
               child: CircularProgressIndicator(
                 color: Colors.white, // Color of the loading indicator
                 strokeWidth: 3.0,

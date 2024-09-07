@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:my_project/splash.dart';
+import 'package:my_project/screens/splash_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
-      title: 'Splash Screen Example',
+      title: 'Pamurger',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // Add routes for navigation
-      routes: {
-        '/': (context) => SplashScreen(),
-        '/home': (context) => HomeScreen(),  // Replace with your home screen widget
-      },
     );
   }
 }
