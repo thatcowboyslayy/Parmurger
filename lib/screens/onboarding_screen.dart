@@ -54,18 +54,18 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 children: const [
                   OnboardingScreenWidget(
                     imageUrl: 'assets/images/page2.png',
-                    textContent1: 'Do no more waste food',
-                    textContent2: "We Have the solution",
+                    textContent1: 'No more food waste',
+                    textContent2: "We've got the solution",
                   ),
                   OnboardingScreenWidget(
                     imageUrl: 'assets/images/page3.png',
-                    textContent1: 'Do no more waste food',
-                    textContent2: "We Have the solution",
+                    textContent1: 'No more food waste',
+                    textContent2: "We've got the solution",
                   ),
                   OnboardingScreenWidget(
                     imageUrl: 'assets/images/page1.png',
-                    textContent1: 'Do no more waste food',
-                    textContent2: "We Have the solution",
+                    textContent1: 'No more food waste',
+                    textContent2: "We've got the solution",
                   ),
                 ],
               ),
