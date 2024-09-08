@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_project/screens/splash_screen.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
@@ -24,16 +25,3 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home Screen'),
-      ),
-      body: Center(
-        child: Text('Welcome to the Home Screen!'),
-      ),
-    );
-  }
-}

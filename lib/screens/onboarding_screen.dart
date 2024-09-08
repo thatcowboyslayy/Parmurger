@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_project/screens/login_screen.dart';
 import 'package:my_project/utils/app_theme.dart';
 import 'package:my_project/widgets/onboarding_widget.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -35,7 +36,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 alignment: Alignment.centerRight,
                 padding: const EdgeInsets.all(15),
                 child: Text(
-                  pageNumber != 2 ? 'Passer' : "",
+                  pageNumber != 2 ? 'Skip' : "",
                   style:
                       GoogleFonts.poppins(fontSize: 17.sp, color: Colors.grey),
                 ),
@@ -91,7 +92,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   ? () => Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (ctx) => Container(),
+                          builder: (ctx) => LoginPage(),
                         ),
                       )
                   : () => _pageController.nextPage(

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:my_project/screens/onboarding_screen.dart'; // For adding delay
+import 'package:my_project/screens/onboarding_screen.dart';
+import 'package:my_project/utils/app_theme.dart'; // For adding delay
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -16,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     // // Navigate to home screen after 3 seconds
-    Timer(const Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 1), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) => const OnBoardingScreen(),
@@ -31,41 +32,22 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Stack(
         children: [
           Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Color(0xFF014e28), Color(0xFF87dc1b)],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-            ),
-            child: const Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    'Pamerger',
-                    style: TextStyle(
-                      fontFamily: 'Arial',
-                      fontSize: 35.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 100,
-                  )
-                ],
+            decoration: const BoxDecoration(color: Colors.white),
+            child: Center(
+              child: Image.asset(
+                'assets/images/logo.png', // Ensure the path is correct
+                width: 250, // Set the width of the logo
+                height: 250, // Set the height of the logo
               ),
             ),
           ),
           // Three-dot loading indicator at the bottom
-          const Align(
+           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
               padding: EdgeInsets.all(48.0),
               child: CircularProgressIndicator(
-                color: Colors.white, // Color of the loading indicator
+                color: AppTheme.green, // Color of the loading indicator
                 strokeWidth: 3.0,
               ),
             ),
